@@ -105,7 +105,7 @@ class ClusterFeatures(object):
         
         centroids = self.__get_centroids(model)
         #print(centroids)
-        #print(centroids.shape)
+        print(centroids.shape)
         cluster_args = self.__find_closest_args(centroids)
         #print(cluster_args)
         

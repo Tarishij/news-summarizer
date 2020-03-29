@@ -46,7 +46,7 @@ class ModelProcessor(object):
         content: List[str],
         ratio:float = 0.2,
         algorithm: str = 'kmeans',
-        use_first: bool = True
+        use_first: bool = False
     ) -> List[str]:
         """
         Classes must implement this to run the clusters.
@@ -59,7 +59,7 @@ class ModelProcessor(object):
         ratio: float = 0.2,
         min_length: int = 40,
         max_length: int = 600,
-        use_first: bool = True,
+        use_first: bool = False,
         algorithm: str ='kmeans'
     ) -> str:
         """
@@ -87,7 +87,7 @@ class ModelProcessor(object):
         ratio: float = 0.2,
         min_length: int = 40,
         max_length: int = 600,
-        use_first: bool = True,
+        use_first: bool = False,
         algorithm: str = 'kmeans'
     ) -> str:
         """
@@ -127,7 +127,7 @@ class SingleModel(ModelProcessor):
             sentence_handler=sentence_handler, random_state=random_state
         )
 
-    def run_clusters(self, content: List[str], ratio=0.2, algorithm='kmeans', use_first: bool= True) -> List[str]:
+    def run_clusters(self, content: List[str], ratio=0.4, algorithm='kmeans', use_first: bool= False) -> List[str]:
         #print('4')
         hidden = self.model(content, self.hidden, self.reduce_option)
         #print (hidden)
